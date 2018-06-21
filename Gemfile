@@ -17,9 +17,6 @@ gem "will_paginate", "3.1.6"
 gem "pusher", "1.3.1"
 gem "figaro", "1.1.1"
 
-# Use Capistrano for deployment
-# gem "capistrano-rails", group: :development
-
 group :development, :test do
   gem "rspec-rails", "3.7.2"
   gem "byebug", "10.0.2", platforms: [:mri, :mingw, :x64_mingw]
@@ -32,6 +29,11 @@ group :development do
   gem "spring", "2.0.2"
   gem "spring-watcher-listen", "2.0.1"
   gem "letter_opener", "1.6.0"
+  gem "capistrano", "3.10.2"
+  gem "capistrano-bundler", "1.3.0"
+  gem "capistrano-rails", "1.3.1"
+  gem "capistrano-rbenv", "2.1.3"
+  gem "capistrano-rbenv-install", "1.2.0"
 end
 
 group :test do
