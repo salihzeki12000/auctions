@@ -7,8 +7,7 @@ RSpec.feature "bids#create", type: :feature do
 
   scenario "when the bid is not a new winner should post a REJECTED bid" do
     room = create :room
-    user = create :user
-    login_as_user user
+    user = login_as_user
     expect(Bid.count).to be 0
 
     visit room_path(room)

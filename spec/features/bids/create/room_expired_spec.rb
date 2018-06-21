@@ -7,8 +7,7 @@ RSpec.feature "bids#create", type: :feature do
 
   scenario "when the room auction has expired should post a REJECTED bid" do
     room = create :room, expires_at: 3.seconds.from_now
-    user = create :user
-    login_as_user user
+    user = login_as_user
     expect(Bid.count).to be 0
 
     visit room_path(room)

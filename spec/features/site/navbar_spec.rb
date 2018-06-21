@@ -22,8 +22,7 @@ RSpec.feature "Navigation Bar", type: :feature do
 
   context "when user is logged in" do
     scenario "should have correct links" do
-      user = create :user
-      login_as_user user
+      user = login_as_user
 
       within ".navbar-collapse" do
         expect(page).to have_content "logged as:"

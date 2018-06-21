@@ -4,11 +4,11 @@ module Helpers
   def login_as_user(user=create(:user), options={ })
     password = options[:password] || "password"
     user.activate! unless user.active?
-    visit root_path
-    click_link "Login"
+    visit login_path
     fill_in "email", :with => user.email
     fill_in "password", :with => password
     click_button "login_user"
+    return user
   end
 
   # access to view_context in tests

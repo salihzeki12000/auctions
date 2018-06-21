@@ -7,8 +7,7 @@ RSpec.feature "bids#create", type: :feature do
 
   scenario "when the bid is a new winner and there is no previous winner bid should post a ACCEPTED bid" do
     room = create :room
-    user = create :user
-    login_as_user user
+    user = login_as_user
     expect(Bid.count).to be 0
 
     visit room_path(room)
@@ -40,8 +39,7 @@ RSpec.feature "bids#create", type: :feature do
 
   scenario "when the bid is a new winner and there is a previous winner bid should post a ACCEPTED bid" do
     room = create :room, winner_bid: 2000, winner_user_email: "winner@user.email"
-    user = create :user
-    login_as_user user
+    user = login_as_user
     expect(Bid.count).to be 0
 
     visit room_path(room)

@@ -7,11 +7,10 @@ RSpec.feature "rooms#show", type: :feature do
   context "when somebody post a new bid", js: true do
     scenario "the list of bids should refresh automatically" do
       room = create :room, expires_at: 50.seconds.from_now
-      user = create :user
+      user = login_as_user
       bid_1 = create :bid, user: user, room: room
       expect(Bid.count).to be 1
 
-      login_as_user user
       visit room_path(room)
       expect(page).to have_xpath "//span[@class='expiration-time-room text-red blinking']"
       within "#bids_table" do
