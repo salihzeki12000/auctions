@@ -47,5 +47,5 @@ group :test do
 end
 
 group :production do
-  gem "pg", "1.0.0"
+  gem "mysql2", "0.4.10"
 end

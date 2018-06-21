@@ -36,4 +36,5 @@
 /coverage/*
 
 # Ignore personal files
-application.yml
+config/application.yml
+config/database.yml
