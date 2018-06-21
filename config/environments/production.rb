@@ -67,7 +67,7 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
-  config.action_mailer.default_url_options = { :host => "urlmini.microweb10.com" }
+  config.action_mailer.default_url_options = { :host => "auctions.microweb10.com" }
 
 		# Mailer options
 		config.action_mailer.perform_deliveries = true
@@ -76,7 +76,7 @@ Rails.application.configure do
 		config.action_mailer.smtp_settings = {
     :address														=> "smtp.gmail.com",
 				:port																	=> 587,
-				:domain															=> "urlmini.microweb10.com",
+				:domain															=> "auctions.microweb10.com",
 				:user_name												=> ENV["EMAIL_USER"],
 				:password													=> ENV["EMAIL_PASSWORD"],
 				:authentication							=> "plain",
