@@ -43,3 +43,7 @@ group :test do
   gem "database_cleaner", "1.7.0"
   gem "pusher-fake", "1.9.0"
 end
+
+group :production do
+  gem "pg", "1.0.0"
+end
