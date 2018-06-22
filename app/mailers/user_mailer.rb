@@ -3,7 +3,7 @@ class UserMailer < ApplicationMailer
   def activation_needed_email(user)
     @user = user
     @url = activate_user_url(user.activation_code)
-    mail(to: user.email, subject: "Welcome to URLmini Site")
+    mail(to: user.email, subject: "Welcome to Room Auctions Site")
   end
 
   def activation_success_email(user)
