@@ -1,5 +1,7 @@
 # Backend developer assignment
 
+For LIVE version and INSTALLATION instructions check [INSTALL.md](INSTALL.md)
+
 The system you are about to develop is intended to handle bids on hotel auction.
 
 Company RoomsQuickly organizes auction on top hotels luxury rooms once a month. Amount of unique rooms is usually around a few hundred thousands across the globe.
@@ -32,7 +34,6 @@ RoomsQuickly has hundred of partners willing to participate and post bids: websi
 * architecture (components, areas of responsibility)
 * complexity (easier to understand code is better)
 * unit/integration/end2end tests
-=======
 * resolution for all challenges
 
 
