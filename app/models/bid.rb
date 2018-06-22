@@ -34,10 +34,6 @@ class Bid < ApplicationRecord
   #--------------------------------------------------------------
   default_scope -> { order(created_at: :desc) }
 
-  # callbacks
-  #--------------------------------------------------------------
-  after_create :send_pusher_event
-
   # instance methods
   #--------------------------------------------------------------
 

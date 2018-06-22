@@ -6,6 +6,7 @@ class BidsController < ApplicationController
     if result[:exception].present?
       redirect_to result[:redirection_path], alert: result[:exception]
     else
+      bid.send_pusher_event
       if bid.accepted
         redirect_to result[:redirection_path], notice: "Bid posted with status ACCEPTED"
       else
