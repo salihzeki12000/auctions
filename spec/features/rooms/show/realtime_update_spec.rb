@@ -20,8 +20,10 @@ RSpec.feature "rooms#show", type: :feature do
       end
       expect(page).to_not have_selector "#bid_#{bid_1.id + 1}"
 
-      bid_2 = create :bid, user: user, room: room, amount: room.minimal_allowed_bid
-      room.set_new_winner! bid_2, user
+      bid_2 = Bid.new user_id: user.id, room_id: room.id, user_email: user.email, amount: room.minimal_allowed_bid
+      Bid.post_bid(bid_2, user)
+      bid_2.send_pusher_event
+
       within "#bids_table" do
         within "#bid_#{bid_2.id}" do
           expect(page).to have_content bid_2.id
